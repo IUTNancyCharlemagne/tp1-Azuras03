@@ -1,5 +1,3 @@
-package tp1;
-
 import java.util.Objects;
 
 public class Money {

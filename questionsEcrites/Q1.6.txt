@@ -1,0 +1,3 @@
+-- Question 1.6
+Le code de la méthode n'est pas correct. En effet, le test fonctionne même si les deux objets sont d'une devise différente, ce qui ne fonctionne pas comme cela
+normalement. Il faut donc ajouter une exception (que l'on appellera DeviseExcepion) pour vérifier que les deux objets sont de la même devise.
