@@ -7,8 +7,9 @@ public class Money {
     private String devise;
 
     /**
-     * @param mon
-     * @param dev
+     * Constructeur de la classe Money
+     * @param mon entier, le montant
+     * @param dev chaîne, la devise en trois lettres (comme "EUR")
      */
     public Money(int mon, String dev) {
         this.montant = mon;
@@ -16,22 +17,25 @@ public class Money {
     }
 
     /**
-     * @return
+     * Methode donnant le montant de l'argent courant
+     * @return le montant entier de l'argent courant
      */
     public int getMontant() {
         return this.montant;
     }
 
     /**
-     * @return
+     * Methode retournant la devise de l'argent courant
+     * @return la devise
      */
     public String getDevise() {
         return this.devise;
     }
 
     /**
-     * @param m
-     * @return
+     * Methode permettant d'ajouter un montant d'argent
+     * @param m l'argent a ajouter
+     * @return le nouvel objet qui est la fusion des deux objets Money
      */
     public Money add(Money m) {
         return new Money(this.getMontant()+m.getMontant(), this.getDevise());
