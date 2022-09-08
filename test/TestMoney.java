@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestMoney {
 
@@ -18,25 +17,24 @@ public class TestMoney {
     }
 
     @Test
-    public void test_ajouter_money_meme_devise() {
+    public void test_ajouter_money_meme_devise() throws DeviseException {
         m2 = m1.add(m2);
         assertEquals(40, m2.getMontant());
     }
 
     @Test
     public void test_ajouter_money_devise_diff() {
-        m3 = m1.add(m3);
-        assertEquals(20, m3.getMontant());
+        assertThrows(DeviseException.class, () -> m3.add(m1));
     }
 
     @Test
     public void test_equals_money_true() {
-        assertTrue(m1.equals(m2));
+        assertEquals(m1, m2);
     }
 
     @Test
     public void test_equals_money_false() {
-        assertTrue(!m1.equals(m3));
+        assertFalse(m1.equals(m3));
     }
 
     @Test
