@@ -49,4 +49,12 @@ public class Money {
     public int hashCode() {
         return Objects.hash(montant, devise);
     }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "montant=" + montant +
+                ", devise='" + devise + '\'' +
+                '}';
+    }
 }
