@@ -35,8 +35,9 @@ public class Money {
      * @param m l'argent a ajouter
      * @return le nouvel objet qui est la fusion des deux objets Money
      */
-    public Money add(Money m) {
-        return new Money(this.getMontant()+m.getMontant(), this.getDevise());
+    public Money add(Money m) throws DeviseException {
+        if(this.getDevise().equals(m.getDevise())) return new Money(this.getMontant()+m.getMontant(), this.getDevise());
+        else throw new DeviseException("Les devises sont differentes, erreur." + "\n");
     }
 
     @Override
